@@ -206,3 +206,25 @@ function duplicateEncode(word) {
   }
   return solution.join("");
 }
+
+let text = "412*!-/++2haej asdj82_:;";
+/* =======================================
+    7kyu Printer Errors
+
+========================================= */
+
+function printerError(s) {
+  let count = [...s].reduce(
+    (acc, curr) => {
+      if (curr.charCodeAt(0) - 96 > "a".charCodeAt(0) - 84) {
+        acc.err++;
+        acc.tot++;
+      } else {
+        acc.tot++;
+      }
+      return acc;
+    },
+    { err: 0, tot: 0 }
+  );
+  return `${count.err}/${count.tot}`;
+}
