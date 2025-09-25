@@ -228,3 +228,28 @@ function printerError(s) {
   );
   return `${count.err}/${count.tot}`;
 }
+
+let num = 700304;
+// console.log(arr.filter((a, b) => a - b));
+
+//if (char.match(/[a-zA-Z]+/g))
+function expandedForm(num) {
+  let zero = "0";
+  console.log(
+    num
+      .toString()
+      .split("")
+      .reverse()
+      .map((n, i) => {
+        if (n > 0) {
+          return n + zero.repeat(i);
+        } else {
+          return null;
+        }
+      })
+      .reverse()
+      .filter((c) => c !== null)
+  );
+}
+expandedForm(num);
+// .filter(c => c !== ' ').join(' + ')
